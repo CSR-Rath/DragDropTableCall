@@ -37,16 +37,8 @@ class ViewController: UIViewController {
         }
         
         tableView = UITableView(frame: view.bounds, style: .plain)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
-        
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        ])
-        
+
         tableView.backgroundColor = .orange
         tableView.register(Cell.self, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
